@@ -1,3 +1,5 @@
 = Roman-Numerals Kata - Java version
 
+image:https://circleci.com/gh/roamingthings/roman-numerals-kata.png["Build Status", link="https://circleci.com/gh/roamingthings/roman-numerals-kata"]
+
 An implementation of the http://kata-log.rocks/roman-numerals-kata[Roman-Numerals Kata].
