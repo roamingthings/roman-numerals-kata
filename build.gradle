@@ -1,7 +1,13 @@
+plugins {
+    id 'java'
+}
+
+description = """ 
+An implementation of the Roman-Numerals Kata.
+"""
+
 group 'de.roamingthings'
 version '1.0-SNAPSHOT'
-
-apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
@@ -11,8 +17,19 @@ repositories {
 
 dependencies {
     testCompile("org.junit.jupiter:junit-jupiter-api:5.1.0")
-    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.1.0")
-    testCompile 'org.junit.jupiter:junit-jupiter-params:5.1.0'
+    testCompile('org.junit.jupiter:junit-jupiter-params:5.1.0')
 
-    testCompile 'org.assertj:assertj-core:3.9.1'
+    testRuntime("org.junit.jupiter:junit-jupiter-engine:5.1.0")
+
+    testCompile('org.assertj:assertj-core:3.9.1')
+}
+
+test {
+    useJUnitPlatform()
+
+    dependsOn 'cleanTest'
+
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
 }
